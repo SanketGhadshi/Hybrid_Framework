@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.hybrid.TestCases.TC_LoginPageTest_001">
+      <class name="com.hybrid.PageObjects.select_All_checkbox">
         <methods>
-          <include name="tearDown"/>
-          <include name="BrowSetup"/>
-          <include name="loginTest"/>
+          <include name="select_all_checkbox"/>
+          <include name="url"/>
         </methods>
-      </class> <!-- com.hybrid.TestCases.TC_LoginPageTest_001 -->
+      </class> <!-- com.hybrid.PageObjects.select_All_checkbox -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

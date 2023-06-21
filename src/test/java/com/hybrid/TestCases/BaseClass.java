@@ -1,6 +1,7 @@
 package com.hybrid.TestCases;
 
 import java.time.Duration;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,6 +48,7 @@ public class BaseClass {
 			if(br.equals("chrome")) {
 				WebDriverManager.chromedriver().setup();
 				ChromeOptions cOptions = new ChromeOptions();
+				cOptions.addArguments("--remote-allow-origins=*");
 			    Map<String, Object> prefs = new HashMap<String, Object>();
 			    prefs.put("credentials_enable_service", false);
 			    prefs.put("profile.password_manager_enabled", false);

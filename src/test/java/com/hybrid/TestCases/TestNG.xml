@@ -3,7 +3,7 @@
 <suite name="Suite">
   
   <listeners>   
-         <listener class-name="com.hybrid.utilities.Reporting_Listener"  />
+         <listener class-name="com.hybrid.utilities.Reporting_Listener2"  />
    </listeners>
 
   <test name="Hybrid_Framework">
