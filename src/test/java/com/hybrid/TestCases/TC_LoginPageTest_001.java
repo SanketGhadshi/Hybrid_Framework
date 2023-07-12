@@ -2,6 +2,8 @@ package com.hybrid.TestCases;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,7 +15,7 @@ import com.hybrid.PageObjects.LoginPage;
 public class TC_LoginPageTest_001 extends BaseClass{
 	
 	@Test
-	public void loginTest() 
+	public void loginTest() throws IOException 
 	{		
 
 		 LoginPage lp=new LoginPage(driver);
@@ -25,13 +27,14 @@ public class TC_LoginPageTest_001 extends BaseClass{
 
 		 lp.clickSubmit();
 		 
-		 if(driver.getTitle().equals("Guru99 Bank Manager HomePage")) 
+		 if(driver.getTitle().equals("Guru99 Bank Manager HomePage"))  // For failed case  .equals("Guru99 Bank Manager HomePage123"))
 		 {
 			 Assert.assertTrue(true);
 			 logger.info("login test passed");
 		 }
 		 else {
-			 Assert.assertTrue(true);
+			 captureScreen(driver, "loginTest");
+			 Assert.assertTrue(false);
 			 logger.info("login test failed");
 		 }
 		

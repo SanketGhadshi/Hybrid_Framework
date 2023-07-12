@@ -48,6 +48,13 @@
     <version>5.2.2</version>
 </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.2</version>
+</dependency>
+
   <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
@@ -61,18 +68,14 @@
       <version>31.0.1-jre</version>
     </dependency>
     
-    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi-ooxml</artifactId>
-    <version>5.2.2</version>
-</dependency>
+
     
-  <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<!--  3.1.2 OLD & New 5.0.3 as per latest -->
 <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
-    <version>4.0.1</version>
+    <version>5.0.9</version>
 </dependency>
 
   <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
