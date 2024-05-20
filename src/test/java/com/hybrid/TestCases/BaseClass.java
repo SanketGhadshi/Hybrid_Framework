@@ -7,8 +7,10 @@ import java.time.Duration;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -29,6 +31,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
+import com.github.dockerjava.api.model.Driver;
 import com.hybrid.utilities.ReadConfig;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -53,8 +56,10 @@ public class BaseClass {
 //			DOMConfigurator.configure("Log4l.xml");
 			
 			if(br.equals("chrome")) {
-				WebDriverManager.chromedriver().setup();
+				WebDriverManager.chromedriver().clearDriverCache().setup();
 				ChromeOptions cOptions = new ChromeOptions();
+				
+				
 				cOptions.addArguments("--remote-allow-origins=*");
 			    Map<String, Object> prefs = new HashMap<String, Object>();
 			    prefs.put("credentials_enable_service", false);
@@ -95,8 +100,12 @@ public class BaseClass {
 			logger.info("URL is opened");
 
 			System.out.println("...Browser opened sucessfully...");
+			
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.get(baseURL);
 
 		}
+		
 		
 		
 		@AfterClass
@@ -126,5 +135,17 @@ public class BaseClass {
 //			  Reporter.log("<br><img src='"+screenshotName+"' height='300' width='300'/><br>"); 
 //			
 //		 }
+		 
+		 public String randomestring()
+			{
+				String generatedstring = RandomStringUtils.randomAlphabetic(8);
+				return(generatedstring);
+			}
+
+			public static String randomeNum()
+			{
+				String generatedstring2 = RandomStringUtils.randomNumeric(4);
+				return(generatedstring2);
+			}
 	}
 	

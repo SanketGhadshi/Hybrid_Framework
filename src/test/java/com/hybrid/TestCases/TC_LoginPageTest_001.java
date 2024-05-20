@@ -15,7 +15,7 @@ import com.hybrid.PageObjects.LoginPage;
 public class TC_LoginPageTest_001 extends BaseClass{
 	
 	@Test
-	public void loginTest() throws IOException 
+	public void loginTest() throws InterruptedException, IOException
 	{		
 
 		 LoginPage lp=new LoginPage(driver);

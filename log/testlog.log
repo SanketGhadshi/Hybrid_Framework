@@ -190,3 +190,69 @@
 2023-07-12 18:46:26,291 - Hybrid_Framework -INFO - URL is opened
 2023-07-12 18:46:27,069 - Hybrid_Framework -INFO - Entered usrername
 2023-07-12 18:46:27,134 - Hybrid_Framework -INFO - Entered password
+2023-07-18 16:52:41,012 - Hybrid_Framework -INFO - URL is opened
+2023-07-18 16:52:44,049 - Hybrid_Framework -INFO - Username is provided
+2023-07-18 16:52:44,114 - Hybrid_Framework -INFO - Password is provided
+2023-07-18 16:52:48,790 - Hybrid_Framework -WARN - Login Passed
+2023-07-18 16:52:55,222 - Hybrid_Framework -INFO - Username is provided
+2023-07-18 16:52:55,293 - Hybrid_Framework -INFO - Password is provided
+2023-07-18 16:53:04,825 - Hybrid_Framework -INFO - Username is provided
+2023-07-18 16:53:04,883 - Hybrid_Framework -INFO - Password is provided
+2023-07-18 16:53:11,146 - Hybrid_Framework -INFO - Username is provided
+2023-07-18 16:53:11,248 - Hybrid_Framework -INFO - Password is provided
+2023-07-18 16:53:15,067 - Hybrid_Framework -WARN - Login Passed
+2023-07-18 16:53:21,613 - Hybrid_Framework -INFO - Username is provided
+2023-07-18 16:53:21,661 - Hybrid_Framework -INFO - Password is provided
+2024-01-28 13:27:36,444 - Hybrid_Framework -INFO - URL is opened
+2024-01-28 13:27:39,779 - Hybrid_Framework -INFO - Username is provided
+2024-01-28 13:27:40,036 - Hybrid_Framework -INFO - Password is provided
+2024-01-28 13:27:47,004 - Hybrid_Framework -INFO - Username is provided
+2024-01-28 13:27:47,093 - Hybrid_Framework -INFO - Password is provided
+2024-01-28 13:27:52,302 - Hybrid_Framework -INFO - Username is provided
+2024-01-28 13:27:52,375 - Hybrid_Framework -INFO - Password is provided
+2024-01-28 13:27:57,706 - Hybrid_Framework -INFO - Username is provided
+2024-01-28 13:27:57,762 - Hybrid_Framework -INFO - Password is provided
+2024-01-28 13:28:02,890 - Hybrid_Framework -INFO - Username is provided
+2024-01-28 13:28:02,980 - Hybrid_Framework -INFO - Password is provided
+2024-02-18 11:47:59,739 - Hybrid_Framework -INFO - URL is opened
+2024-02-18 11:48:03,935 - Hybrid_Framework -INFO - Username is provided
+2024-02-18 11:48:04,031 - Hybrid_Framework -INFO - Password is provided
+2024-02-18 11:48:09,897 - Hybrid_Framework -INFO - Username is provided
+2024-02-18 11:48:09,962 - Hybrid_Framework -INFO - Password is provided
+2024-02-18 11:48:15,880 - Hybrid_Framework -INFO - Username is provided
+2024-02-18 11:48:15,947 - Hybrid_Framework -INFO - Password is provided
+2024-02-18 11:48:19,826 - Hybrid_Framework -WARN - Login Passed
+2024-02-18 11:48:25,928 - Hybrid_Framework -INFO - Username is provided
+2024-02-18 11:48:26,006 - Hybrid_Framework -INFO - Password is provided
+2024-02-18 11:48:32,674 - Hybrid_Framework -INFO - Username is provided
+2024-02-18 11:48:32,749 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 20:55:45,173 - Hybrid_Framework -INFO - URL is opened
+2024-05-18 20:55:46,718 - Hybrid_Framework -INFO - URL is opened
+2024-05-18 20:55:47,640 - Hybrid_Framework -INFO - Entered usrername
+2024-05-18 20:55:47,885 - Hybrid_Framework -INFO - Entered password
+2024-05-18 20:55:49,433 - Hybrid_Framework -INFO - login test passed
+2024-05-18 20:55:49,989 - Hybrid_Framework -INFO - Entered usrername
+2024-05-18 20:55:50,195 - Hybrid_Framework -INFO - Entered password
+2024-05-18 20:55:51,785 - Hybrid_Framework -INFO - login test passed
+2024-05-18 21:07:12,139 - Hybrid_Framework -INFO - URL is opened
+2024-05-18 21:07:19,241 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:07:19,387 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:07:25,370 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:07:25,543 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:07:31,275 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:07:31,460 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:07:36,397 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:07:36,564 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:07:42,299 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:07:42,508 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:20:23,356 - Hybrid_Framework -INFO - URL is opened
+2024-05-18 21:20:29,549 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:20:29,680 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:20:35,662 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:20:35,793 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:20:41,504 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:20:41,661 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:20:47,312 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:20:47,477 - Hybrid_Framework -INFO - Password is provided
+2024-05-18 21:20:53,289 - Hybrid_Framework -INFO - Username is provided
+2024-05-18 21:20:53,474 - Hybrid_Framework -INFO - Password is provided

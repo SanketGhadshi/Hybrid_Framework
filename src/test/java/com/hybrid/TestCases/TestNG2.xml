@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  
+  <listeners>   
+    <listener class-name="com.hybrid.utilities.Reporting_Listener" />
+  </listeners>
+
+  <test name="Hybrid_Framework">
+    <parameter name="browser" value="chrome" />
+    
+    <classes>
+      <!-- Uncomment the classes you need to run -->
+      <!-- <class name="com.hybrid.TestCases.TC_LoginPageTest_001"/> -->  
+      <!-- <class name="com.hybrid.TestCases.TC_LoginDDT_002"/>  --> 
+      <class name="com.hybrid.TestCases.TC_AddCustomerTest_003"/> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

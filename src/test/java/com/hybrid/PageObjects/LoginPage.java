@@ -2,6 +2,7 @@ package com.hybrid.PageObjects;
 
 import org.openqa.selenium.Alert;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -31,6 +32,10 @@ public class LoginPage {
 	@CacheLookup
 	WebElement btnLogin;
 	
+	@FindBy(xpath="//a[text()='Log out']")
+	@CacheLookup
+	WebElement lnkLogout;
+	
 	public void setUsername(String uname) 
 	{
 		txtUserName.sendKeys(uname);
@@ -46,6 +51,12 @@ public class LoginPage {
 	public void clickSubmit() 
 	{
 		btnLogin.click();
+		
+	}	
+	
+	public void clickLogout() 
+	{
+		lnkLogout.click();
 		
 	}	
 	

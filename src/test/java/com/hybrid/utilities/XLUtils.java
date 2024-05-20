@@ -1,6 +1,7 @@
 package com.hybrid.utilities;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -42,7 +43,7 @@ public class XLUtils {
 		return cellcount;
 	}
 	
-	public static int getCellData(String xlfile, String xlsheet, int rownum, int colnum) throws IOException
+	public static String getCellData(String xlfile, String xlsheet, int rownum, int colnum) throws IOException
 	{
 		fi = new FileInputStream(xlfile);
 		wb = new XSSFWorkbook(fi);
@@ -62,6 +63,22 @@ public class XLUtils {
 		wb.close();
 		fi.close();
 		return data;
+	}
+	
+	public static void setCellData(String xlfile, String xlsheet, int rownum, int colnum, String data) throws IOException
+	{
+		fi = new FileInputStream(xlfile);
+		wb = new XSSFWorkbook(fi);
+		ws = wb.getSheet(xlsheet);
+		row = ws.getRow(rownum);
+		cell = row.createCell(colnum);
+		cell.setCellValue(data);
+		fo = new FileOutputStream(xlfile);
+		wb.write(fo);
+		wb.close();
+		fi.close();
+		fo.close();
+		
 	}
 
 }
