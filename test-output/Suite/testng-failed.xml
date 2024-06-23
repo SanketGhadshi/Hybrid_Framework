@@ -7,13 +7,13 @@
   <test thread-count="5" name="Hybrid_Framework(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.hybrid.TestCases.TC_LoginDDT_002">
+      <class name="com.hybrid.TestCases.TC_LoginPageTest_001">
         <methods>
           <include name="tearDown"/>
-          <include name="loginDDT" invocation-numbers="0 1 2 3 4"/>
           <include name="BrowSetup"/>
+          <include name="loginTest"/>
         </methods>
-      </class> <!-- com.hybrid.TestCases.TC_LoginDDT_002 -->
+      </class> <!-- com.hybrid.TestCases.TC_LoginPageTest_001 -->
     </classes>
   </test> <!-- Hybrid_Framework(failed) -->
 </suite> <!-- Failed suite [Suite] -->

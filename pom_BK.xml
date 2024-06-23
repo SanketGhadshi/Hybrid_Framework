@@ -19,49 +19,30 @@
   </properties>
  
  <!--    Plug-ins required for executing test cases  --> 
-
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
+  <build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
-            <configuration>
-                <source>11</source> <!-- Specify your Java version -->
-                <target>11</target> <!-- Specify your Java version -->
-                <annotationProcessorPaths>
-                    <path>
-                        <groupId>org.projectlombok</groupId>
-                        <artifactId>lombok</artifactId>
-                        <version>1.18.28</version> <!-- Use the same version as your Lombok dependency -->
-                    </path>
-                </annotationProcessorPaths>
-                <compilerArgs>
-                    <arg>--add-exports</arg>
-                    <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
-                    <arg>--add-opens</arg>
-                    <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
-                    <arg>--add-opens</arg>
-                    <arg>jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
-                </compilerArgs>
-            </configuration>
-        </plugin>
-        
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <suiteXMlFiles>
-                      <!--  TestNG suite xml files -->
-                      <suiteXMLFiles>C:\Users\Sanket Ghadshi\Git\Hybrid_Framework\src\test\java\com\hybrid\TestCases\Testng.xml</suiteXMLFiles>
-                </suiteXMlFiles>
-            </configuration>
-        </plugin>
-        
-    </plugins>
-    
+              <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+              </configuration>
+    </plugin>
    
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.22.2</version>
+      <configuration>
+         <suiteXMlFiles>
+            <!--  TestNG suite xml files -->
+            <suiteXMLFiles>TestNG.xml</suiteXMLFiles>
+         </suiteXMlFiles>
+      </configuration>
+    </plugin>
+  </plugins>
 </build>
 
  <!--  dependencies required for project  --> 
@@ -182,14 +163,6 @@
     <artifactId>slf4j-simple</artifactId>
     <version>2.0.11</version>
     <scope>test</scope>
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <version>1.18.30</version>
-    <scope>provided</scope>
 </dependency>
     
   </dependencies>
