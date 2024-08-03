@@ -71,12 +71,11 @@ public class Reporting_Listener extends TestListenerAdapter {
 		 
 		public void onTestStart(ITestResult result) {
 			// TODO Auto-generated method stub
-			
 			String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()); //time stamp
 			String repName ="Test-Report-"+timeStamp+".html";
 			System.out.println(repName);
 			spark = new ExtentSparkReporter("C:\\Users\\Sanket Ghadshi\\Git\\Hybrid_Framework\\Reports\\"+repName);
-			
+
 			extent.attachReporter(spark);
 					
 			spark.config().setDocumentTitle("Automation Report"); //Title of the report
