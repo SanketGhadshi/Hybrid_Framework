@@ -10,6 +10,13 @@
           <include name="BrowSetup"/>
         </methods>
       </class> <!-- com.hybrid.TestCases.TC_LoginDDT_002 -->
+      <class name="com.hybrid.TestCases.TC_AddCustomerTest_003">
+        <methods>
+          <include name="tearDown"/>
+          <include name="addNewCustomer"/>
+          <include name="BrowSetup"/>
+        </methods>
+      </class> <!-- com.hybrid.TestCases.TC_AddCustomerTest_003 -->
       <class name="com.hybrid.TestCases.TC_LoginPageTest_001">
         <methods>
           <include name="tearDown"/>

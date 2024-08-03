@@ -2,72 +2,70 @@ package com.hybrid.TestCases;
 
 import java.io.IOException;
 
-import org.apache.commons.lang3.RandomStringUtils;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.hybrid.PageObjects.AddCustomerPage;
-
 import com.hybrid.PageObjects.LoginPage;
 
 public class TC_AddCustomerTest_003 extends BaseClass
 {
-	public void addNewCustomer() throws InterruptedException, IOException {
-		
-//		Login Page functinality
+
+	@Test
+	public void addNewCustomer() throws InterruptedException, IOException
+	{
 		LoginPage lp = new LoginPage(driver) ;
 		lp.setUsername(username);
-		logger.info("Username is Provided");
+		logger.info("User name is provided");
 		lp.setPassword(password);
-		logger.info("Password is Provided");
+		logger.info("Passsword is provided");
 		lp.clickSubmit();
 		
 		Thread.sleep(3000);
 		
-//		Add New Customer Funtionality
-		AddCustomerPage addcust = new AddCustomerPage(driver) ;
+		AddCustomerPage addcust=new AddCustomerPage(driver);
 		
-//		Click on add new cutomer link
 		addcust.clickAddNewCustomer();
 		
-		logger.info("Providing customer details");
+		logger.info("providing customer details....");
 		
-//		Enter the details
-		addcust.custName("Sanket");
+		
+		addcust.custName("Pavan");
 		addcust.custgender("male");
-		addcust.custdob("10", "02", "1986");
-		Thread.sleep(3000);
+		addcust.custdob("10","15","1985");
+		Thread.sleep(5000);
 		addcust.custaddress("INDIA");
-		addcust.custcity("Mumbai");
-		addcust.custstate("MH");
-		addcust.custpinno("400305");
-		addcust.custtelephoneno("0987654321");
+		addcust.custcity("HYD");
+		addcust.custstate("AP");
+		addcust.custpinno("5000074");
+		addcust.custtelephoneno("987890091");
 		
-		String email = randomestring()+"@gmail.com";
+		String email=randomestring()+"@gmail.com";
 		addcust.custemailid(email);
 		addcust.custpassword("abcdef");
 		addcust.custsubmit();
 		
 		Thread.sleep(3000);
 		
-		logger.info("Validation is started.............");
+		logger.info("validation started....");
 		
-		boolean res = driver.getPageSource().contains("Customer Registered Successfully!!!");
+		boolean res=driver.getPageSource().contains("Customer Registered Successfully!!!");
 		
 		if(res==true)
 		{
 			Assert.assertTrue(true);
-			logger.info("Test case is passed.......");
+			logger.info("test case passed....");
+			
 		}
 		else
 		{
-			logger.info("Test case is failed.......");
+			logger.info("test case failed....");
 			captureScreen(driver,"addNewCustomer");
 			Assert.assertTrue(false);
 		}
 			
 	}
-	
 	
 	
 }

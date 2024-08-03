@@ -347,3 +347,21 @@
 2024-08-03 11:12:09,484 - Hybrid_Framework -INFO - Entered usrername
 2024-08-03 11:12:09,572 - Hybrid_Framework -INFO - Entered password
 2024-08-03 11:12:11,745 - Hybrid_Framework -INFO - login test passed
+2024-08-03 17:12:58,098 - Hybrid_Framework -INFO - URL is opened
+2024-08-03 17:13:00,953 - Hybrid_Framework -INFO - Entered usrername
+2024-08-03 17:13:01,035 - Hybrid_Framework -INFO - Entered password
+2024-08-03 17:13:03,346 - Hybrid_Framework -INFO - login test passed
+2024-08-03 17:14:00,306 - Hybrid_Framework -INFO - URL is opened
+2024-08-03 17:14:03,338 - Hybrid_Framework -INFO - Entered usrername
+2024-08-03 17:14:03,470 - Hybrid_Framework -INFO - Entered password
+2024-08-03 17:14:04,961 - Hybrid_Framework -INFO - login test passed
+2024-08-03 17:16:20,677 - Hybrid_Framework -INFO - URL is opened
+2024-08-03 17:16:23,227 - Hybrid_Framework -INFO - Entered usrername
+2024-08-03 17:16:23,305 - Hybrid_Framework -INFO - Entered password
+2024-08-03 17:16:24,827 - Hybrid_Framework -INFO - login test passed
+2024-08-03 17:16:31,763 - Hybrid_Framework -INFO - URL is opened
+2024-08-03 17:16:33,499 - Hybrid_Framework -INFO - User name is provided
+2024-08-03 17:16:33,567 - Hybrid_Framework -INFO - Passsword is provided
+2024-08-03 17:16:37,686 - Hybrid_Framework -INFO - providing customer details....
+2024-08-03 17:17:01,802 - Hybrid_Framework -INFO - validation started....
+2024-08-03 17:17:01,818 - Hybrid_Framework -INFO - test case passed....
