@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.hybrid.PageObjects.AddCustomerPage_BK;
 
 import com.hybrid.PageObjects.LoginPage;
+import com.hybrid.base.BaseClass;
 
 public class TC_AddCustomerTest_003_BK extends BaseClass
 {

@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.hybrid.PageObjects.LoginPage;
+import com.hybrid.base.BaseClass;
 import com.hybrid.utilities.XLUtils;
 
 public class TC_LoginDDT_002 extends BaseClass {

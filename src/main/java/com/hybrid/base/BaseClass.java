@@ -1,4 +1,4 @@
-package com.hybrid.TestCases;
+package com.hybrid.base;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,6 @@ import com.github.dockerjava.api.model.Driver;
 import com.hybrid.utilities.ReadConfig;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
 
 public class BaseClass {
 		

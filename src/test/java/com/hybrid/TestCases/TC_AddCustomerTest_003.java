@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import com.hybrid.PageObjects.AddCustomerPage;
 import com.hybrid.PageObjects.LoginPage;
+import com.hybrid.base.BaseClass;
 
 public class TC_AddCustomerTest_003 extends BaseClass
 {
@@ -16,10 +17,13 @@ public class TC_AddCustomerTest_003 extends BaseClass
 	public void addNewCustomer() throws InterruptedException, IOException
 	{
 		LoginPage lp = new LoginPage(driver) ;
+		
 		lp.setUsername(username);
 		logger.info("User name is provided");
+		
 		lp.setPassword(password);
 		logger.info("Passsword is provided");
+		
 		lp.clickSubmit();
 		
 		Thread.sleep(3000);
