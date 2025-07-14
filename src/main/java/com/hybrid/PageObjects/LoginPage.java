@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.hybrid.utilities.CommonMethods;
+
 public class LoginPage {
 
 	// Instance variable to store driver reference passed to constructor
@@ -34,8 +36,8 @@ public class LoginPage {
     }
 
     // Locate the username input field using the name attribute
-    @FindBy(name = "uid")
-    WebElement txtUserName;
+    @FindBy(name = "uid23")
+    WebElement ele_UserName;
 
     // Locate the password input field using the name attribute
     @FindBy(name = "password")
@@ -50,11 +52,14 @@ public class LoginPage {
     @FindBy(xpath = "//a[text()='Log out']")
     @CacheLookup
     WebElement lnkLogout;
+    
+    CommonMethods cm = new CommonMethods();
 
     // Method to input username into the username field
     public void setUsername(String uname)
     {
-        txtUserName.sendKeys(uname); // Types the given username
+//      txtUserName.sendKeys(uname); // Types the given username
+    	cm.enterText(ele_UserName, uname);
     }
 
     // Method to input password into the password field
