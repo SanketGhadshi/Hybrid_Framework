@@ -1,0 +1,177 @@
+package com.lms.utilities;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.lms.base.BaseClass;
+
+public class ExtentListenerClass extends BaseClass implements ITestListener{
+
+	ExtentSparkReporter htmlReporter; // spark
+	public ExtentReports extent = new ExtentReports(); //reports - specify location
+	public ExtentTest test;  // what details should be populated in the report
+	public static WebDriver driver;
+	ThreadLocal<ExtentTest> extentTest= new ThreadLocal<ExtentTest>();
+		
+	public ExtentReports getReportObject()
+	{
+		ReadConfig readConfig = new ReadConfig();
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()); //time stamp
+		String reportName = "LMSTestReport-"+timeStamp+".html";
+		htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir") + "//Reports//" + reportName);
+		System.out.println(reportName);
+		
+		extent.attachReporter(htmlReporter);
+		
+		//configuration to change look and feel of report
+		htmlReporter.config().setDocumentTitle("Web Automation Results");
+		htmlReporter.config().setReportName("Functional Report");
+		htmlReporter.config().setTheme(Theme.DARK);
+		
+		//add system information/environment info to reports
+		extent.setSystemInfo("Machine:", "testpc1");
+		extent.setSystemInfo("OS", "windows 11");
+		extent.setSystemInfo("browser:", readConfig.getBrowser());
+		extent.setSystemInfo("user name:", "Sanket");
+		
+		return extent;		
+	}
+
+	//OnStart method is called when any Test starts.
+	@Override 
+	public void onStart(ITestContext Result)					
+	{		
+		getReportObject();
+		System.out.println("On Start method invoked....");  
+		extent.flush();
+	}	
+
+	//onFinish method is called after all Tests are executed
+	@Override
+	public void onFinish(ITestContext Result) 					
+	{		
+		System.out.println("On Finished method invoked....");  	
+		extent.flush();//it is mandatory to call flush method to ensure information is written to the started reporter.
+
+	}		
+	// When Test case get failed, this method is called.		
+
+	@Override
+	public void onTestFailure(ITestResult Result) 					
+	{		
+//		System.out.println("Failed Method : " + Result.getName() );  		
+//		test = extent.createTest(Result.getName());//create entry in html report
+//		test.log(Status.FAIL, MarkupHelper.createLabel("Name of the failed test case is: " + Result.getName() ,ExtentColor.RED));
+//	    
+//	    extentTest.get().fail(Result.getThrowable());
+//	    
+//	    try 
+//		{
+//            driver = (WebDriver) Result.getTestClass().getRealClass().getField("driver")
+//                    .get(Result.getInstance());
+//        } 
+//		catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//	
+//	    String filePath = null;
+//	       
+//        try {
+//            filePath = getScreenshot(Result.getMethod().getMethodName(),driver);
+//        } 
+//        catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        
+//        extentTest.get().addScreenCaptureFromPath(filePath, Result.getMethod().getMethodName());
+
+		System.out.println("Failed Method : " + Result.getName());
+	    extentTest.get().log(Status.FAIL,
+	        MarkupHelper.createLabel("Name of the failed test case is: " + Result.getName(), ExtentColor.RED));
+
+	    extentTest.get().fail(Result.getThrowable());
+
+	    try {
+	        driver = (WebDriver) Result.getTestClass().getRealClass().getField("driver").get(Result.getInstance());
+	        String filePath = getScreenshot(Result.getMethod().getMethodName(), driver);
+	        extentTest.get().addScreenCaptureFromPath(filePath, Result.getMethod().getMethodName());
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+		
+		extent.flush();
+		
+	}		
+
+	// When Test case get Skipped, this method is called.		
+	@Override
+	public void onTestSkipped(ITestResult Result)					
+	{		
+//		System.out.println("Skipped Method : " + Result.getName() );  		
+//
+//		test = extent.createTest(Result.getName());
+//		test.log(Status.SKIP, MarkupHelper.createLabel("Name of the skip test case is: " + Result.getName() ,ExtentColor.YELLOW));
+		
+	    System.out.println("Skipped Method : " + Result.getName());
+	    extentTest.get().log(Status.SKIP,
+	        MarkupHelper.createLabel("Name of the skip test case is: " + Result.getName(), ExtentColor.YELLOW));
+
+		
+		extent.flush();
+	}			
+
+	// When Test case get Started, this method is called.		
+	@Override
+	public void onTestStart(ITestResult Result)					
+	{		
+//		System.out.println("Started Method : " + Result.getName() ); 
+//	    test = extent.createTest(Result.getMethod().getMethodName());
+//	    extentTest.set(test);
+	    
+	    System.out.println("Started Method : " + Result.getName());
+	    test = extent.createTest(Result.getMethod().getMethodName());
+	    extentTest.set(test);
+	    
+		extent.flush();
+
+	}		
+
+	// When Test case get passed, this method is called.		
+	@Override
+	public void onTestSuccess(ITestResult Result)					
+	{		
+		System.out.println("Executed Sucessfully Method : " + Result.getName() ); 
+
+//		test = extent.createTest(Result.getName());
+//		test.log(Status.PASS, MarkupHelper.createLabel("Passed Test Case Is: " + Result.getName() ,ExtentColor.GREEN));
+			
+	    System.out.println("Executed Successfully Method : " + Result.getName());
+	    extentTest.get().log(Status.PASS,
+	        MarkupHelper.createLabel( Result.getName(), ExtentColor.GREEN));
+
+	    extent.flush();
+	}		
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult Result)					
+	{		
+
+	}		
+
+
+	
+}
