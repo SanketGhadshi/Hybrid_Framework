@@ -1,45 +1,79 @@
 package com.hybrid.utilities;
 
 import java.io.File;
-
 import java.io.FileInputStream;
+
+import java.io.FileNotFoundException;
 import java.util.Properties;
 
 public class ReadConfig {
 
-	Properties pro;
-	
-	public ReadConfig()
-	{
+	Properties properties;
+
+//	String path = "C:\\Users\\Sanket Ghadshi\\Git\\Hybrid_Framework\\Configuration\\config.properties";
+
+	//constructor
+	public ReadConfig() {
+		
 		File src= new File("./Configuration/config.properties");
 		
-		try {
-			FileInputStream fis = new FileInputStream(src);
-			pro = new Properties();
-			pro.load(fis);
-		}
-		catch(Exception e)
+		try 
 		{
-			System.out.println("Exception is : " + e.getMessage());
+			properties = new Properties();
+			FileInputStream  fis = new FileInputStream(src);
+			properties.load(fis);
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			throw new RuntimeException("ReadConfig class failed : ", e);
 		}
+
+
 	}
-	
-	public String getApplicationURL() 
+	public String getBaseUrl()
 	{
-		String url = pro.getProperty("baseURL");
-		return url;	
+		String url = properties.getProperty("baseUrl");
+
+		if(url!=null) {
+			return url;
+		}
+		else
+		{
+			throw new RuntimeException("URL not specified in config file.");
+		}
+
 	}
-	
-	public String getUsername() 
+
+	public String getBrowser()
 	{
-		String username = pro.getProperty("username");
-		return username;	
+		String value = properties.getProperty("browser");
+
+		if(value!=null)
+			return value;
+		else
+			throw new RuntimeException("URL not specified in config file.");
+
 	}
 	
-	public String getPassword() 
+	public String getUsername()
 	{
-		String password = pro.getProperty("password");
-		return password;	
+		String username = properties.getProperty("username");
+		if(username!=null)
+			return username;
+		else
+			throw new RuntimeException("Username not specified in config file.");
+		
 	}
-	
+
+	public String getPassword()
+	{
+		String password = properties.getProperty("password");
+		if(password!=null)
+			return password;
+		else
+			throw new RuntimeException("Password not specified in config file.");
+		
+	}
+
 }
