@@ -3,20 +3,19 @@
 <suite name="Suite">
   
   <listeners>   
-         <listener class-name="com.hybrid.utilities.Reporting_Listener"  />
+         <listener class-name="com.hybrid.utilities.ExtentListenerClass"  />
    </listeners>
    
-
   <test name="Hybrid_Framework">
-   
-    <parameter name="browser" value="chrome" />
+  	
+  <parameter name="browser" value="chrome" />
     
     <classes>
-
-    <class name="com.hybrid.TestCases.TC_LoginPageTest_001"/>
+    <!--<class name="com.hybrid.TestCases.TC_LoginPageBankProject"/>-->
+    <class name="com.hybrid.TestCases.TC_LoginWithmultipleCredentials"/>
+    <!--<class name="com.hybrid.TestCases.TC_LoginPageTest_001"/> -->
     <!--<class name="com.hybrid.TestCases.TC_LoginDDT_002"/>  --> 
-    <!-- <class name="com.hybrid.TestCases.TC_AddCustomerTest_003"/> -->
-      
+    <!--<class name="com.hybrid.TestCases.TC_AddCustomerTest_003"/>  -->
     </classes>
     
   </test> <!-- TestNG -->

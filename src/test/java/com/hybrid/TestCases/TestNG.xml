@@ -13,9 +13,10 @@
     
     <classes>
     
-    <class name="com.hybrid.TestCases.TC_LoginPageTest_001"/>  
+    <class name="com.hybrid.TestCases.TC_LoginPageBankProject"/>
+    <!--<class name="com.hybrid.TestCases.TC_LoginPageTest_001"/> -->
     <!--<class name="com.hybrid.TestCases.TC_LoginDDT_002"/>  --> 
-    <class name="com.hybrid.TestCases.TC_AddCustomerTest_003"/> 
+    <!--<class name="com.hybrid.TestCases.TC_AddCustomerTest_003"/>  -->
       
     </classes>
     
