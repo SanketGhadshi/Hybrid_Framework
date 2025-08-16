@@ -12,6 +12,31 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonMethods {
+	
+//	public static void clickElement(WebElement element) {
+//	    try {
+//	        element.click();
+//	    } catch (Exception e) {
+//	        System.out.println("Unable to click element: " + e.getMessage());
+//	    }
+//	}
+	
+	public static void clickElement(WebDriver driver, WebElement element) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            element.click();
+        } catch (Exception e) {
+            System.out.println("Standard click failed, trying JS click: " + e.getMessage());
+            try {
+                JavascriptExecutor js = (JavascriptExecutor) driver;
+                js.executeScript("arguments[0].click();", element);
+            } catch (Exception jsEx) {
+                System.out.println("JS click also failed: " + jsEx.getMessage());
+                throw jsEx;
+            }
+        }
+    }
 
 	/**
      * Clicks an element using WebDriverWait. Falls back to JS click if standard click fails.
@@ -97,6 +122,34 @@ public class CommonMethods {
     {
         try 
         {
+          
+//	public static void enterText(WebElement element, String text) {
+//	    try {
+//	        element.clear();
+//	        element.sendKeys(text);
+//	    } catch (Exception e) {
+//	        System.out.println("Unable to enter text: " + e.getMessage());
+//	    }
+//	}
+    
+	
+	public static void enterText(WebElement element, String text) {
+        try {
+            element.clear();
+            element.sendKeys(text);
+        } catch (Exception e) {
+            System.out.println("Unable to enter text: " + e.getMessage());
+            throw e;
+        }
+    }
+	
+    public static String getElementText(WebElement element) {
+        return element.getText();
+    }
+    
+
+    public static boolean isElementDisplayed(WebElement element) {
+        try {
             return element.isDisplayed();
         } 
         catch (Exception e) 
@@ -104,6 +157,7 @@ public class CommonMethods {
             return false;
         }
     }
+
 
     /**
      * Waits for the visibility of an element for the given duration.
@@ -160,4 +214,32 @@ public class CommonMethods {
             throw e;
         }
     }
+}
+=======
+    
+    public static void waitForVisibility(WebDriver driver, WebElement element, int time) {
+        new WebDriverWait(driver, Duration.ofSeconds(time)).until(ExpectedConditions.visibilityOf(element));
+    }
+    
+    public static void selectDropdown(WebElement element, String value) {
+        Select select = new Select(element);
+        select.selectByVisibleText(value);
+    }
+    
+    public static void selectOptionFromDropDown(WebElement ele,String value) {
+		
+		Select drp = new Select(ele);
+		
+		List<WebElement> allOptions =drp.getOptions();
+		  
+		  for(WebElement option:allOptions) {
+			 
+			  if(option.getText().equals(value)) {
+				 
+				  option.click();
+				  break;
+			  }
+		  }
+	}
+     
 }
